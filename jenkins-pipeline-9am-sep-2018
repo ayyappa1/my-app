@@ -2,7 +2,7 @@ node{
     stage('Git Checkout'){
 	git 'https:https://github.com/ayyappa1/my-app'
 	}
-    stage('compile-package'){
+    stage('compile-package1'){
 	sh 'mvn package'
 	}
 	
