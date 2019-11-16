@@ -3,6 +3,7 @@ node{
     git 'https://github.com/ayyappa1/my-app'
   }
   stage('compile package'){
-    sh 'mvn package'
+    def mavenHome = tool name: 'maven-3', type: 'maven'
+    sh '${mavenHome}/bin/mvn package'
   }
 }
