@@ -1,0 +1,8 @@
+node{
+  stage('checkout scm'){
+    git 'https://github.com/ayyappa1/my-app'
+  }
+  stage('compile package'){
+    sh 'mvn package'
+  }
+}
