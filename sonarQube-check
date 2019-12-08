@@ -7,10 +7,7 @@ node{
     sh "${mavenHome}/bin/mvn clean"
   }
   stage('SonarQube Analysis') {
-        def mvnHome =  tool name: 'maven-3', type: 'maven'
-        withSonarQubeEnv('sonar-11') { 
-          sh "${mvnHome}/bin/mvn sonar:sonar"
-        }
+        def mavenHome = tool name: 'maven-3', type: 'maven'
+        sh "${mavenHome}/bin/mvn sonar:sonar -Dsonar.url=http://54.156.80.49:9000 -Dsonar.login=e5e22c89122efcb33aef18c3646e0216964f00c8"
     }
-	
 }
